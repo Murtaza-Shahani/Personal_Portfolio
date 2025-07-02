@@ -37,17 +37,18 @@ export default function Hero() {
         {/* CTA Buttons */}
         <div className="flex gap-4">
           <motion.a
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            href="#contact"
-            className="px-6 py-3 bg-purple-600 text-white rounded-full shadow hover:bg-purple-700 transition"
-          >
-            Hire Me
-          </motion.a>
+  whileHover={{ scale: 1.1 }}
+  whileTap={{ scale: 0.95 }}
+  href="mailto:murtazashahani2023@gmail.com?subject=Job%20Application&body=Dear%20Ghulam%20Murtaza,"
+  className="px-6 py-3 bg-purple-600 text-white rounded-full shadow hover:bg-purple-700 transition"
+>
+  Hire Me
+</motion.a>
+
           <motion.a
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            href="/resume.pdf"
+            href="https://drive.google.com/drive/u/0/folders/1H7y07y5uEiLNIta1W2JjAi506XOFhIrt"
             target="_blank"
             className="px-6 py-3 border border-purple-600 text-purple-600 dark:text-purple-400 rounded-full hover:bg-purple-100 dark:hover:bg-purple-800 transition"
           >
