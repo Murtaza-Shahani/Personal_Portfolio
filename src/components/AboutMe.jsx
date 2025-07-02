@@ -1,5 +1,5 @@
 import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNodeJs, FaDocker, FaAws, FaGithub } from "react-icons/fa";
-import { SiTailwindcss, SiExpress, SiMongodb, SiMysql, SiTensorflow, SiKeras, SiGooglecolab, SiNextdotjs, SiBootstrap, SiPython } from "react-icons/si";  // Added missing icons
+import { SiTailwindcss, SiExpress, SiMongodb, SiMysql, SiTensorflow, SiKeras, SiGooglecolab, SiNextdotjs, SiBootstrap, SiPython } from "react-icons/si";
 
 export default function AboutMe() {
   return (
@@ -13,16 +13,16 @@ export default function AboutMe() {
 
       {/* About Me Description */}
       <div className="flex flex-col md:flex-row items-center justify-between gap-12">
-        <div className="flex-1">
-          <p className="text-lg text-gray-300 mb-6">
+        <div className="flex-1 w-full">
+          <p className="text-lg text-gray-300 mb-6 break-words">
             Hello! I'm <span className="text-purple-500">Ghulam Murtaza</span>, a recent Computer Science graduate with specialization in Full Stack Web Development, Data Science, and AI. I am passionate about creating scalable and efficient web applications and intelligent solutions that help businesses grow.
           </p>
-          <p className="text-lg text-gray-300 mb-6">
+          <p className="text-lg text-gray-300 mb-6 break-words">
             My goal is to build web solutions that are not only functional but also provide excellent user experiences. I have hands-on experience in a variety of modern technologies and frameworks, and I am always looking for new challenges that help me learn and grow.
           </p>
 
           {/* Social Media Links */}
-          <div className="flex gap-6 justify-center">
+          <div className="flex flex-wrap gap-4 justify-center">
             <a
               href="https://www.linkedin.com/in/ghulam-murtaza-shahani/"
               target="_blank"
@@ -65,16 +65,17 @@ export default function AboutMe() {
       </div>
 
       {/* Skills Section */}
-<div className="flex justify-center items-center mb-8">
+      <div className="flex justify-center items-center mb-8">
         <div className="border-t border-purple-600 flex-grow"></div>
         <h2 className="px-6 text-4xl font-bold text-center text-purple-500 my-12">Technical Skills</h2>
         <div className="border-t border-purple-600 flex-grow"></div>
       </div>
-      {/* Outer Skills Card with Transitioning Border */}
-      <div className="w-full p-1 md:p-4 bg-gray-800 rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-1015 transition-all group">
+
+      {/* Skills Card with Transitioning Border */}
+      <div className="w-full p-1 md:p-4 bg-gray-800 rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all group">
         <div className="absolute inset-0 border-2 border-purple-500 rounded-lg transition-all group-hover:border-pink-500"></div>
 
-        {/* Inner Icons Grid */}
+        {/* Icons Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 relative z-10">
           {/* HTML */}
           <div className="flex justify-center items-center p-2 rounded-lg bg-gray-700 hover:bg-purple-600 transition-colors">

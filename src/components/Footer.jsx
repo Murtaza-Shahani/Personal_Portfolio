@@ -25,29 +25,29 @@ export default function Footer() {
 
         {/* Navigation Links */}
         <div className="mb-8">
-          <ul className="flex justify-center space-x-8">
+          <ul className="flex flex-wrap justify-center space-x-8 sm:space-x-6">
             <li>
-              <a href="#home" className="text-lg text-white hover:text-gray-400 transition">
+              <a href="#home" className="text-lg text-white hover:text-gray-400 transition mb-2 sm:mb-0">
                 Home
               </a>
             </li>
             <li>
-              <a href="#about" className="text-lg text-white hover:text-gray-400 transition">
+              <a href="#about" className="text-lg text-white hover:text-gray-400 transition mb-2 sm:mb-0">
                 About
               </a>
             </li>
             <li>
-              <a href="#projects" className="text-lg text-white hover:text-gray-400 transition">
+              <a href="#projects" className="text-lg text-white hover:text-gray-400 transition mb-2 sm:mb-0">
                 Projects
               </a>
             </li>
             <li>
-              <a href="#services" className="text-lg text-white hover:text-gray-400 transition">
+              <a href="#services" className="text-lg text-white hover:text-gray-400 transition mb-2 sm:mb-0">
                 Services
               </a>
             </li>
             <li>
-              <a href="#contact" className="text-lg text-white hover:text-gray-400 transition">
+              <a href="#contact" className="text-lg text-white hover:text-gray-400 transition mb-2 sm:mb-0">
                 Contact
               </a>
             </li>
@@ -55,17 +55,17 @@ export default function Footer() {
         </div>
 
         {/* Social Icons */}
-        <div className="flex justify-center space-x-6 mb-6">
-          <a href="https://www.linkedin.com/in/ghulam-murtaza-shahani/" className="text-3xl text-white hover:text-gray-400 transition">
+        <div className="flex flex-wrap justify-center space-x-6 mb-6">
+          <a href="https://www.linkedin.com/in/ghulam-murtaza-shahani/" className="text-3xl text-white hover:text-gray-400 transition mb-2 sm:mb-0">
             <FaLinkedin />
           </a>
-          <a href="https://github.com/Murtaza-Shahani" className="text-3xl text-white hover:text-gray-400 transition">
+          <a href="https://github.com/Murtaza-Shahani" className="text-3xl text-white hover:text-gray-400 transition mb-2 sm:mb-0">
             <FaGithub />
           </a>
-          <a href="https://www.instagram.com/murtaza_shahani1/" className="text-3xl text-white hover:text-gray-400 transition">
+          <a href="https://www.instagram.com/murtaza_shahani1/" className="text-3xl text-white hover:text-gray-400 transition mb-2 sm:mb-0">
             <FaInstagram />
           </a>
-          <a href="https://www.facebook.com/profile.php?id=61563129508235" className="text-3xl text-white hover:text-gray-400 transition">
+          <a href="https://www.facebook.com/profile.php?id=61563129508235" className="text-3xl text-white hover:text-gray-400 transition mb-2 sm:mb-0">
             <FaFacebook />
           </a>
         </div>

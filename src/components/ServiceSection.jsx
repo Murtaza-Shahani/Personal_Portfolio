@@ -55,10 +55,10 @@ export default function ServicesSection() {
             <h3 className="text-2xl font-bold mb-2 text-gray-100 hover:text-purple-400 transition-colors">
               {service.title}
             </h3>
-            
+
             {/* Description */}
             <p className="text-sm text-gray-300 mb-4 min-h-[60px]">{service.description}</p>
-            
+
             {/* Button */}
             <a
               href="#"

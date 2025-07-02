@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, Moon, Sun, Github, Linkedin, Instagram } from 'lucide-react';
-import { Link } from 'react-router-dom';  // For routing in React
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
 
-  // Apply theme on load and toggle
   useEffect(() => {
     const html = document.documentElement;
     if (isDark) {
@@ -88,21 +87,21 @@ export default function Navbar() {
             />
           )}
           <a
-            href="https://github.com/Murtaza-Shahani"  // Replace with your GitHub link
+            href="https://github.com/Murtaza-Shahani"
             target="_blank"
             rel="noopener noreferrer"
           >
             <Github className="hover:text-purple-500 cursor-pointer" />
           </a>
           <a
-            href="https://www.linkedin.com/in/ghulam-murtaza-shahani/"  // Replace with your LinkedIn link
+            href="https://www.linkedin.com/in/ghulam-murtaza-shahani/"
             target="_blank"
             rel="noopener noreferrer"
           >
             <Linkedin className="hover:text-purple-500 cursor-pointer" />
           </a>
           <a
-            href="https://www.instagram.com/murtaza_shahani1/"  // Replace with your Instagram link
+            href="https://www.instagram.com/murtaza_shahani1/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -111,8 +110,11 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden">
-          <button onClick={() => setIsOpen(!isOpen)}>
+        <div className="md:hidden flex items-center">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-xl text-black dark:text-white"
+          >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
@@ -165,21 +167,21 @@ export default function Navbar() {
               />
             )}
             <a
-              href="https://github.com/Murtaza-Shahani"  // Replace with your GitHub link
+              href="https://github.com/Murtaza-Shahani"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Github className="hover:text-purple-500 cursor-pointer" />
             </a>
             <a
-              href="https://www.linkedin.com/in/ghulam-murtaza-shahani/"  // Replace with your LinkedIn link
+              href="https://www.linkedin.com/in/ghulam-murtaza-shahani/"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Linkedin className="hover:text-purple-500 cursor-pointer" />
             </a>
             <a
-              href="https://www.instagram.com/murtaza_shahani1/"  // Replace with your Instagram link
+              href="https://www.instagram.com/murtaza_shahani1/"
               target="_blank"
               rel="noopener noreferrer"
             >
