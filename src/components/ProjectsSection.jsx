@@ -5,32 +5,39 @@ import { motion } from 'framer-motion';
 
 const fullStackProjects = [
   {
+    title: 'Synthetic Voice Detection',
+    desc: 'Deep learning project to detect AI-generated voices using CNN/LSTM models.',
+    code: 'https://github.com/Murtaza-Shahani/Fyp_Synthetic_voice_detection',
+    live: '#',
+    img: '/images/voice-detection.png',
+  },
+  {
     title: 'Job Board Platform',
     desc: 'A full-stack job board platform with user authentication and job listings management.',
-    code: '#',
+    code: 'https://github.com/Murtaza-Shahani/IBA_Job_plateform',
     live: '#',
-    img: '/images/job-board.png',
+    img: '/job.png',
   },
   {
     title: 'Airbnb-like Website',
     desc: 'Airbnb-style user-authenticated platform with review and listing management.',
     code: '#',
     live: '#',
-    img: '/images/airbnb.png',
+    img: '/WanderLust.png',
   },
   {
     title: 'Personal Finance Tracker',
     desc: 'Track and visualize expenses with charts, using local input with graphs.',
-    code: '#',
+    code: 'https://github.com/Murtaza-Shahani/P_Finance_Tracker_Web3_Prj3',
     live: '#',
-    img: '/images/finance-tracker.png',
+    img: '/FinanceT.png',
   },
   {
     title: 'Personal Portfolio',
     desc: 'Personal portfolio built with React and Material UI to showcase work and contact.',
-    code: '#',
+    code: 'https://github.com/Murtaza-Shahani/Personal_Portfolio',
     live: '#',
-    img: '/Personal.png',
+    img: '/Personal1.png',
   },
 ];
 
@@ -108,15 +115,18 @@ export default function ProjectsSection() {
             className="rounded-xl overflow-hidden shadow-lg bg-black/20 backdrop-blur-md border border-purple-600 transform hover:scale-105 hover:shadow-2xl hover:border-pink-500 transition-all"
           >
             {/* Project Image */}
-            <div className="w-full h-30 relative overflow-hidden rounded-t-xl">
-              {project.img && (
-                <img
-                  src={project.img}
-                  alt={project.title}
-                  className="w-full h-full object-cover transform transition duration-300 hover:scale-110"
-                />
-              )}
-            </div>
+           {/* Project Image */}
+<div className="w-full bg-gray-800/40">
+  <div className="aspect-[16/9] overflow-hidden rounded-t-xl flex items-center justify-center">
+    <img
+      src={project.img}
+      alt={project.title}
+      className="h-full w-full object-contain"  // show whole image
+      loading="lazy"
+    />
+  </div>
+</div>
+
 
             {/* Project Info */}
             <div className="p-6">

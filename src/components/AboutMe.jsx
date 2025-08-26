@@ -1,173 +1,257 @@
-import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNodeJs, FaDocker, FaAws, FaGithub } from "react-icons/fa";
-import { SiTailwindcss, SiExpress, SiMongodb, SiMysql, SiTensorflow, SiKeras, SiGooglecolab, SiNextdotjs, SiBootstrap, SiPython } from "react-icons/si";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJsSquare,
+  FaReact,
+  FaNodeJs,
+  FaDocker,
+  FaAws,
+  FaGithub,
+} from "react-icons/fa";
+import {
+  SiTailwindcss,
+  SiExpress,
+  SiMongodb,
+  SiMysql,
+  SiTensorflow,
+  SiKeras,
+  SiGooglecolab,
+  SiNextdotjs,
+  SiBootstrap,
+  SiPython,
+} from "react-icons/si";
+import { FiCheckCircle, FiMapPin, FiLinkedin, FiGithub as FiGithubIcon } from "react-icons/fi";
 
 export default function AboutMe() {
   return (
     <section className="min-h-screen bg-gray-900 text-white px-6 md:px-20 py-16">
       {/* About Me Title with Lines */}
       <div className="flex justify-center items-center mb-12">
-        <div className="border-t border-purple-600 flex-grow"></div>
-        <h2 className="px-6 text-4xl font-bold text-center text-purple-500">About Me</h2>
-        <div className="border-t border-purple-600 flex-grow"></div>
+        <div className="border-t border-purple-600 flex-grow" />
+        <h2 className="px-6 text-4xl font-bold text-center text-purple-500">
+          About Me
+        </h2>
+        <div className="border-t border-purple-600 flex-grow" />
       </div>
 
       {/* About Me Description */}
       <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+        {/* LEFT: improved content */}
         <div className="flex-1 w-full">
-          <p className="text-lg text-gray-300 mb-6 break-words">
-            Hello! I'm <span className="text-purple-500">Ghulam Murtaza</span>, a recent Computer Science graduate with specialization in Full Stack Web Development, Data Science, and AI. I am passionate about creating scalable and efficient web applications and intelligent solutions that help businesses grow.
-          </p>
-          <p className="text-lg text-gray-300 mb-6 break-words">
-            My goal is to build web solutions that are not only functional but also provide excellent user experiences. I have hands-on experience in a variety of modern technologies and frameworks, and I am always looking for new challenges that help me learn and grow.
-          </p>
+          {/* availability + location */}
+          <div className="flex flex-wrap items-center gap-3 mb-5">
+            <span className="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 px-3 py-1 text-emerald-300 text-xs">
+              <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+              Open to opportunities
+            </span>
+            <span className="inline-flex items-center gap-2 text-gray-300/80 text-xs">
+              <FiMapPin className="opacity-70" /> Karachi, PK (UTC+5)
+            </span>
+          </div>
+
+          {/* concise bullets */}
+          <ul className="space-y-3 text-gray-300 leading-relaxed">
+            <Bullet>
+              Hello! I’m <b className="text-purple-300">Ghulam Murtaza</b> — CS grad specializing in
+              <b className="text-purple-300"> Full-Stack</b>, <b className="text-purple-300"> Data Science</b> &{" "}
+              <b className="text-purple-300"> AI</b>.
+            </Bullet>
+            <Bullet>
+              I design <b>scalable</b> web apps and build <b>intelligent automations</b> that help businesses grow.
+            </Bullet>
+            <Bullet>
+              Comfortable with <b>React / Next.js</b>, <b>Node / Express</b>, <b>MongoDB / MySQL</b>, <b>Docker</b>, and cloud.
+            </Bullet>
+            <Bullet>Obsessed with UX, performance, and clean code.</Bullet>
+          </ul>
+
+          {/* compact stat strip */}
+          <div className="mt-6 grid grid-cols-3 gap-3 max-w-md">
+            <Stat value="15+" label="Projects" />
+            <Stat value="5+" label="Clients" />
+            <Stat value="2+" label="Years" />
+          </div>
 
           {/* Social Media Links */}
-          <div className="flex flex-wrap gap-4 justify-center">
+          <div className="mt-7 flex flex-wrap gap-3 justify-center md:justify-start">
             <a
               href="https://www.linkedin.com/in/ghulam-murtaza-shahani/"
               target="_blank"
-              className="px-6 py-2 bg-purple-600 text-white rounded-full shadow hover:bg-purple-700 transition duration-300"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-purple-600 text-white shadow hover:bg-purple-700 transition"
             >
-              LinkedIn
+              <FiLinkedin /> LinkedIn
             </a>
             <a
               href="https://github.com/Murtaza-Shahani"
               target="_blank"
-              className="px-6 py-2 bg-gray-800 text-white rounded-full shadow hover:bg-gray-700 transition duration-300"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gray-800 text-white shadow hover:bg-gray-700 transition"
             >
-              GitHub
+              <FiGithubIcon /> GitHub
             </a>
             <a
               href="https://www.instagram.com/murtaza_shahani1/"
               target="_blank"
-              className="px-6 py-2 bg-pink-600 text-white rounded-full shadow hover:bg-pink-700 transition duration-300"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-pink-600 text-white shadow hover:bg-pink-700 transition"
             >
               Instagram
             </a>
             <a
               href="https://www.facebook.com/profile.php?id=61563129508235"
               target="_blank"
-              className="px-6 py-2 bg-blue-600 text-white rounded-full shadow hover:bg-blue-700 transition duration-300"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-blue-600 text-white shadow hover:bg-blue-700 transition"
             >
               Facebook
             </a>
           </div>
         </div>
 
-        {/* Profile Image */}
+        {/* RIGHT: keep as-is */}
         <div className="flex-1 flex justify-center">
           <img
-            src="/profile2.jpeg" // Your profile image
-            alt="Ghulam Murtaza"
-            className="rounded-full w-64 h-64 object-cover border-4 border-purple-500 shadow-xl"
+            src="/profile2.jpeg"
+            alt="Portrait of Ghulam Murtaza"
+            className="rounded-full w-[370px] h-[370px] object-cover border-4 border-purple-500 shadow-xl"
           />
         </div>
       </div>
 
-      {/* Skills Section */}
-      <div className="flex justify-center items-center mb-8">
-        <div className="border-t border-purple-600 flex-grow"></div>
-        <h2 className="px-6 text-4xl font-bold text-center text-purple-500 my-12">Technical Skills</h2>
-        <div className="border-t border-purple-600 flex-grow"></div>
+      {/* Skills Title */}
+      <div className="flex justify-center items-center mt-16 mb-8">
+        <div className="border-t border-purple-600 flex-grow" />
+        <h2 className="px-6 text-4xl font-bold text-center text-purple-500 my-8">
+          Technical Skills
+        </h2>
+        <div className="border-t border-purple-600 flex-grow" />
       </div>
 
-      {/* Skills Card with Transitioning Border */}
-      <div className="w-full p-1 md:p-4 bg-gray-800 rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all group">
-        <div className="absolute inset-0 border-2 border-purple-500 rounded-lg transition-all group-hover:border-pink-500"></div>
+      {/* Skills Wrapper (slimmer + centered) */}
+      <div className="space-y-10 max-w-5xl mx-auto px-2">
+        {/* Frontend */}
+        <SkillGroup title="Frontend">
+          <Skill name="HTML5" color="text-orange-500">
+            <FaHtml5 />
+          </Skill>
+          <Skill name="CSS3" color="text-blue-500">
+            <FaCss3Alt />
+          </Skill>
+          <Skill name="JavaScript" color="text-yellow-400">
+            <FaJsSquare />
+          </Skill>
+          <Skill name="React" color="text-cyan-400">
+            <FaReact />
+          </Skill>
+          <Skill name="Tailwind CSS" color="text-sky-400">
+            <SiTailwindcss />
+          </Skill>
+          <Skill name="Next.js" color="text-white">
+            <SiNextdotjs />
+          </Skill>
+          <Skill name="Bootstrap" color="text-purple-400">
+            <SiBootstrap />
+          </Skill>
+        </SkillGroup>
 
-        {/* Icons Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 relative z-10">
-          {/* HTML */}
-          <div className="flex justify-center items-center p-2 rounded-lg bg-gray-700 hover:bg-purple-600 transition-colors">
-            <FaHtml5 size={32} className="text-orange-500" />
-          </div>
+        {/* Backend & Databases */}
+        <SkillGroup title="Backend & Databases">
+          <Skill name="Node.js" color="text-green-500">
+            <FaNodeJs />
+          </Skill>
+          <Skill name="Express" color="text-gray-300">
+            <SiExpress />
+          </Skill>
+          <Skill name="MongoDB" color="text-green-600">
+            <SiMongodb />
+          </Skill>
+          <Skill name="MySQL" color="text-blue-500">
+            <SiMysql />
+          </Skill>
+          <Skill name="GitHub" color="text-gray-200">
+            <FaGithub />
+          </Skill>
+        </SkillGroup>
 
-          {/* CSS */}
-          <div className="flex justify-center items-center p-2 rounded-lg bg-gray-700 hover:bg-purple-600 transition-colors">
-            <FaCss3Alt size={32} className="text-blue-500" />
-          </div>
-
-          {/* JavaScript */}
-          <div className="flex justify-center items-center p-2 rounded-lg bg-gray-700 hover:bg-purple-600 transition-colors">
-            <FaJsSquare size={32} className="text-yellow-500" />
-          </div>
-
-          {/* Tailwind CSS */}
-          <div className="flex justify-center items-center p-2 rounded-lg bg-gray-700 hover:bg-purple-600 transition-colors">
-            <SiTailwindcss size={32} className="text-blue-400" />
-          </div>
-
-          {/* React */}
-          <div className="flex justify-center items-center p-2 rounded-lg bg-gray-700 hover:bg-purple-600 transition-colors">
-            <FaReact size={32} className="text-cyan-400" />
-          </div>
-
-          {/* Node.js */}
-          <div className="flex justify-center items-center p-2 rounded-lg bg-gray-700 hover:bg-purple-600 transition-colors">
-            <FaNodeJs size={32} className="text-green-500" />
-          </div>
-
-          {/* MongoDB */}
-          <div className="flex justify-center items-center p-2 rounded-lg bg-gray-700 hover:bg-purple-600 transition-colors">
-            <SiMongodb size={32} className="text-green-600" />
-          </div>
-
-          {/* Express */}
-          <div className="flex justify-center items-center p-2 rounded-lg bg-gray-700 hover:bg-purple-600 transition-colors">
-            <SiExpress size={32} className="text-gray-500" />
-          </div>
-
-          {/* AWS */}
-          <div className="flex justify-center items-center p-2 rounded-lg bg-gray-700 hover:bg-purple-600 transition-colors">
-            <FaAws size={32} className="text-orange-500" />
-          </div>
-
-          {/* Docker */}
-          <div className="flex justify-center items-center p-2 rounded-lg bg-gray-700 hover:bg-purple-600 transition-colors">
-            <FaDocker size={32} className="text-blue-400" />
-          </div>
-
-          {/* GitHub */}
-          <div className="flex justify-center items-center p-2 rounded-lg bg-gray-700 hover:bg-purple-600 transition-colors">
-            <FaGithub size={32} className="text-gray-300" />
-          </div>
-
-          {/* TensorFlow */}
-          <div className="flex justify-center items-center p-2 rounded-lg bg-gray-700 hover:bg-purple-600 transition-colors">
-            <SiTensorflow size={32} className="text-orange-500" />
-          </div>
-
-          {/* Keras */}
-          <div className="flex justify-center items-center p-2 rounded-lg bg-gray-700 hover:bg-purple-600 transition-colors">
-            <SiKeras size={32} className="text-red-500" />
-          </div>
-
-          {/* Google Colab */}
-          <div className="flex justify-center items-center p-2 rounded-lg bg-gray-700 hover:bg-purple-600 transition-colors">
-            <SiGooglecolab size={32} className="text-yellow-600" />
-          </div>
-
-          {/* Next.js */}
-          <div className="flex justify-center items-center p-2 rounded-lg bg-gray-700 hover:bg-purple-600 transition-colors">
-            <SiNextdotjs size={32} className="text-white" />
-          </div>
-
-          {/* Bootstrap */}
-          <div className="flex justify-center items-center p-2 rounded-lg bg-gray-700 hover:bg-purple-600 transition-colors">
-            <SiBootstrap size={32} className="text-purple-500" />
-          </div>
-
-          {/* Python */}
-          <div className="flex justify-center items-center p-2 rounded-lg bg-gray-700 hover:bg-purple-600 transition-colors">
-            <SiPython size={32} className="text-yellow-500" />
-          </div>
-
-          {/* MySQL */}
-          <div className="flex justify-center items-center p-2 rounded-lg bg-gray-700 hover:bg-purple-600 transition-colors">
-            <SiMysql size={32} className="text-blue-600" />
-          </div>
-        </div>
+        {/* Cloud • DevOps • AI */}
+        <SkillGroup title="Cloud • DevOps • AI">
+          <Skill name="AWS" color="text-orange-400">
+            <FaAws />
+          </Skill>
+          <Skill name="Docker" color="text-sky-400">
+            <FaDocker />
+          </Skill>
+          <Skill name="TensorFlow" color="text-orange-500">
+            <SiTensorflow />
+          </Skill>
+          <Skill name="Keras" color="text-red-500">
+            <SiKeras />
+          </Skill>
+          <Skill name="Google Colab" color="text-amber-400">
+            <SiGooglecolab />
+          </Skill>
+          <Skill name="Python" color="text-yellow-400">
+            <SiPython />
+          </Skill>
+        </SkillGroup>
       </div>
     </section>
+  );
+}
+
+/* ----------------- Helpers ----------------- */
+
+function SkillGroup({ title, children }) {
+  return (
+    <section aria-label={title}>
+      <div className="text-center mb-4">
+        <h3 className="text-xl md:text-2xl font-semibold text-gray-200">{title}</h3>
+        <div className="mx-auto mt-2 h-1 w-14 rounded bg-purple-500/80" />
+      </div>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 justify-items-center">
+        {children}
+      </div>
+    </section>
+  );
+}
+
+function Skill({ name, color, children }) {
+  return (
+    <div
+      className="w-fit select-none group inline-flex flex-col items-center justify-center
+                 rounded-lg border border-white/10 bg-gray-800/70
+                 px-3 py-2 gap-1
+                 transition-[transform,box-shadow,border,background-color] duration-150
+                 hover:-translate-y-0.5 hover:border-purple-500/30 hover:bg-gray-800/90 hover:shadow-md"
+      aria-label={name}
+      tabIndex={0}
+    >
+      <span
+        className={`leading-none text-2xl md:text-[28px] ${color} transition-transform duration-150 group-hover:scale-110`}
+      >
+        {children}
+      </span>
+      <span className="text-[11px] md:text-xs text-gray-300">{name}</span>
+    </div>
+  );
+}
+
+/* bullets + stats */
+function Bullet({ children }) {
+  return (
+    <li className="flex gap-3">
+      <FiCheckCircle className="mt-1 text-purple-400" />
+      <span>{children}</span>
+    </li>
+  );
+}
+
+function Stat({ value, label }) {
+  return (
+    <div className="rounded-xl border border-white/10 bg-gray-800/60 px-4 py-3 text-center shadow-sm">
+      <div className="text-2xl font-semibold text-white">{value}</div>
+      <div className="text-[11px] tracking-wide text-gray-400 uppercase">{label}</div>
+    </div>
   );
 }

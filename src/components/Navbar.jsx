@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, Moon, Sun, Github, Linkedin, Instagram } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,26 +8,33 @@ export default function Navbar() {
 
   useEffect(() => {
     const html = document.documentElement;
-    if (isDark) {
-      html.classList.add('dark');
-    } else {
-      html.classList.remove('dark');
-    }
+    if (isDark) html.classList.add('dark');
+    else html.classList.remove('dark');
   }, [isDark]);
 
   const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
+    { name: 'Home', href: '#home' },
+    { name: 'About', href: '#about' },
+    { name: 'Experience', href: '#experience' },        // <-- added
     {
       name: 'Projects',
+      href: '#projects',
       sub: [
-        { name: 'Full Stack', href: '/projects/fullstack' },
-        { name: 'AI/ML/DL', href: '/projects/ai' },
+        { name: 'Web Projects', href: '#projects' },
+        { name: 'ML / DL Projects', href: '#projects' },
       ],
     },
-    { name: 'Services', href: '/services' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Services', href: '#services' },
+    { name: 'Contact', href: '#contact' },
   ];
+
+  const handleScroll = (e, href) => {
+    e.preventDefault();
+    const id = href.startsWith('#') ? href.slice(1) : href;
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setIsOpen(false);
+  };
 
   return (
     <motion.nav
@@ -39,36 +45,47 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="text-2xl font-bold">
+        <a
+          href="#home"
+          onClick={(e) => handleScroll(e, '#home')}
+          className="text-2xl font-bold"
+        >
           GM.dev
-        </Link>
+        </a>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex gap-6 items-center">
           {navLinks.map((item, index) =>
             item.sub ? (
               <div key={index} className="group relative">
-                <button className="hover:text-purple-500 transition">Projects ▾</button>
-                <div className="absolute top-6 hidden group-hover:block bg-gray-100 dark:bg-gray-800 p-2 rounded shadow">
+                <button
+                  onClick={(e) => handleScroll(e, item.href)}
+                  className="hover:text-purple-500 transition"
+                >
+                  {item.name} ▾
+                </button>
+                <div className="absolute top-6 hidden group-hover:block bg-gray-100 dark:bg-gray-800 p-2 rounded shadow min-w-[180px]">
                   {item.sub.map((sub, subIndex) => (
-                    <Link
+                    <a
                       key={subIndex}
-                      to={sub.href}
+                      href={sub.href}
+                      onClick={(e) => handleScroll(e, sub.href)}
                       className="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded"
                     >
                       {sub.name}
-                    </Link>
+                    </a>
                   ))}
                 </div>
               </div>
             ) : (
-              <Link
+              <a
                 key={index}
-                to={item.href}
+                href={item.href}
+                onClick={(e) => handleScroll(e, item.href)}
                 className="hover:text-purple-500 transition"
               >
                 {item.name}
-              </Link>
+              </a>
             )
           )}
         </div>
@@ -79,17 +96,20 @@ export default function Navbar() {
             <Sun
               className="cursor-pointer hover:text-purple-500"
               onClick={() => setIsDark(false)}
+              aria-label="Switch to light mode"
             />
           ) : (
             <Moon
               className="cursor-pointer hover:text-purple-500"
               onClick={() => setIsDark(true)}
+              aria-label="Switch to dark mode"
             />
           )}
           <a
             href="https://github.com/Murtaza-Shahani"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="GitHub"
           >
             <Github className="hover:text-purple-500 cursor-pointer" />
           </a>
@@ -97,6 +117,7 @@ export default function Navbar() {
             href="https://www.linkedin.com/in/ghulam-murtaza-shahani/"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="LinkedIn"
           >
             <Linkedin className="hover:text-purple-500 cursor-pointer" />
           </a>
@@ -104,6 +125,7 @@ export default function Navbar() {
             href="https://www.instagram.com/murtaza_shahani1/"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Instagram"
           >
             <Instagram className="hover:text-purple-500 cursor-pointer" />
           </a>
@@ -114,6 +136,8 @@ export default function Navbar() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="text-xl text-black dark:text-white"
+            aria-expanded={isOpen}
+            aria-label="Toggle menu"
           >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -130,27 +154,34 @@ export default function Navbar() {
           {navLinks.map((item, index) =>
             item.sub ? (
               <div key={index}>
-                <p className="font-semibold">Projects</p>
-                <div className="space-y-1">
+                <button
+                  onClick={(e) => handleScroll(e, item.href)}
+                  className="block w-full font-semibold hover:text-purple-500"
+                >
+                  {item.name}
+                </button>
+                <div className="space-y-1 mt-1">
                   {item.sub.map((sub, subIndex) => (
-                    <Link
+                    <a
                       key={subIndex}
-                      to={sub.href}
+                      href={sub.href}
+                      onClick={(e) => handleScroll(e, sub.href)}
                       className="block hover:text-purple-500"
                     >
                       {sub.name}
-                    </Link>
+                    </a>
                   ))}
                 </div>
               </div>
             ) : (
-              <Link
+              <a
                 key={index}
-                to={item.href}
+                href={item.href}
+                onClick={(e) => handleScroll(e, item.href)}
                 className="block hover:text-purple-500"
               >
                 {item.name}
-              </Link>
+              </a>
             )
           )}
 
@@ -159,17 +190,20 @@ export default function Navbar() {
               <Sun
                 className="cursor-pointer hover:text-purple-500"
                 onClick={() => setIsDark(false)}
+                aria-label="Switch to light mode"
               />
             ) : (
               <Moon
                 className="cursor-pointer hover:text-purple-500"
                 onClick={() => setIsDark(true)}
+                aria-label="Switch to dark mode"
               />
             )}
             <a
               href="https://github.com/Murtaza-Shahani"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="GitHub"
             >
               <Github className="hover:text-purple-500 cursor-pointer" />
             </a>
@@ -177,6 +211,7 @@ export default function Navbar() {
               href="https://www.linkedin.com/in/ghulam-murtaza-shahani/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LinkedIn"
             >
               <Linkedin className="hover:text-purple-500 cursor-pointer" />
             </a>
@@ -184,6 +219,7 @@ export default function Navbar() {
               href="https://www.instagram.com/murtaza_shahani1/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Instagram"
             >
               <Instagram className="hover:text-purple-500 cursor-pointer" />
             </a>

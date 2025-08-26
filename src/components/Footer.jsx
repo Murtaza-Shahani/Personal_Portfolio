@@ -2,6 +2,22 @@ import { motion } from 'framer-motion';
 import { FaLinkedin, FaGithub, FaInstagram, FaFacebook } from 'react-icons/fa';
 
 export default function Footer() {
+  const links = [
+    { label: 'Home', href: '#home' },
+    { label: 'About', href: '#about' },
+    { label: 'Experience', href: '#experience' }, // <-- added
+    { label: 'Projects', href: '#projects' },
+    { label: 'Services', href: '#services' },
+    { label: 'Contact', href: '#contact' },
+  ];
+
+  const handleScroll = (e, href) => {
+    e.preventDefault();
+    const id = href.replace('#', '');
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   return (
     <footer className="bg-gradient-to-b from-gray-800 to-black text-white py-16">
       <div className="max-w-screen-xl mx-auto px-6 text-center">
@@ -10,10 +26,11 @@ export default function Footer() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5 }}
-          className="text-4xl font-bold text-white mb-4"
+          className="text-4xl font-bold mb-4"
         >
           Ghulam Murtaza
         </motion.h2>
+
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -23,49 +40,59 @@ export default function Footer() {
           Full Stack Web Developer & AI & Data Scientist
         </motion.p>
 
-        {/* Navigation Links */}
-        <div className="mb-8">
-          <ul className="flex flex-wrap justify-center space-x-8 sm:space-x-6">
-            <li>
-              <a href="#home" className="text-lg text-white hover:text-gray-400 transition mb-2 sm:mb-0">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#about" className="text-lg text-white hover:text-gray-400 transition mb-2 sm:mb-0">
-                About
-              </a>
-            </li>
-            <li>
-              <a href="#projects" className="text-lg text-white hover:text-gray-400 transition mb-2 sm:mb-0">
-                Projects
-              </a>
-            </li>
-            <li>
-              <a href="#services" className="text-lg text-white hover:text-gray-400 transition mb-2 sm:mb-0">
-                Services
-              </a>
-            </li>
-            <li>
-              <a href="#contact" className="text-lg text-white hover:text-gray-400 transition mb-2 sm:mb-0">
-                Contact
-              </a>
-            </li>
+        {/* Navigation Links (with Experience) */}
+        <nav className="mb-8">
+          <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+            {links.map((l) => (
+              <li key={l.href}>
+                <a
+                  href={l.href}
+                  onClick={(e) => handleScroll(e, l.href)}
+                  className="text-lg hover:text-gray-400 transition"
+                >
+                  {l.label}
+                </a>
+              </li>
+            ))}
           </ul>
-        </div>
+        </nav>
 
         {/* Social Icons */}
-        <div className="flex flex-wrap justify-center space-x-6 mb-6">
-          <a href="https://www.linkedin.com/in/ghulam-murtaza-shahani/" className="text-3xl text-white hover:text-gray-400 transition mb-2 sm:mb-0">
+        <div className="flex flex-wrap justify-center gap-6 mb-6 text-3xl">
+          <a
+            href="https://www.linkedin.com/in/ghulam-murtaza-shahani/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="hover:text-gray-400 transition"
+          >
             <FaLinkedin />
           </a>
-          <a href="https://github.com/Murtaza-Shahani" className="text-3xl text-white hover:text-gray-400 transition mb-2 sm:mb-0">
+          <a
+            href="https://github.com/Murtaza-Shahani"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            className="hover:text-gray-400 transition"
+          >
             <FaGithub />
           </a>
-          <a href="https://www.instagram.com/murtaza_shahani1/" className="text-3xl text-white hover:text-gray-400 transition mb-2 sm:mb-0">
+          <a
+            href="https://www.instagram.com/murtaza_shahani1/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="hover:text-gray-400 transition"
+          >
             <FaInstagram />
           </a>
-          <a href="https://www.facebook.com/profile.php?id=61563129508235" className="text-3xl text-white hover:text-gray-400 transition mb-2 sm:mb-0">
+          <a
+            href="https://www.facebook.com/profile.php?id=61563129508235"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            className="hover:text-gray-400 transition"
+          >
             <FaFacebook />
           </a>
         </div>
