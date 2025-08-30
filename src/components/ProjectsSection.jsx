@@ -6,22 +6,30 @@ import { motion } from 'framer-motion';
 const fullStackProjects = [
   {
     title: 'Synthetic Voice Detection',
-    desc: 'Deep learning project to detect AI-generated voices using CNN/LSTM models.',
+    desc: 'Deep learning project to detect AI-generated voices using CNN/LSTM models, and classify voice as Real, Fake or Partially fake and , user interfce used with Mern Stack.',
     code: 'https://github.com/Murtaza-Shahani/Fyp_Synthetic_voice_detection',
     live: '#',
-    img: '/images/voice-detection.png',
+    img: '/Voice.png',
+  },
+
+  {
+    title: 'AI Job_Ready_Tutor',
+    desc: 'Built A full-stack AI Job_Ready_Tutor website using Gemini API where user can learn any topic based on its level ,give quiz , find jobs and get cover letter written.',
+    code: 'https://github.com/Murtaza-Shahani/Job_Ready_AiTutor',
+    live: '#',
+    img: '/JobR.png',
   },
   {
     title: 'Job Board Platform',
     desc: 'A full-stack job board platform with user authentication and job listings management.',
     code: 'https://github.com/Murtaza-Shahani/IBA_Job_plateform',
     live: '#',
-    img: '/job.png',
+    img: '/Job1.png',
   },
   {
     title: 'Airbnb-like Website',
     desc: 'Airbnb-style user-authenticated platform with review and listing management.',
-    code: '#',
+    code: 'https://github.com/Murtaza-Shahani/Mern',
     live: '#',
     img: '/WanderLust.png',
   },
@@ -32,6 +40,34 @@ const fullStackProjects = [
     live: '#',
     img: '/FinanceT.png',
   },
+  {
+    title: 'Book Management System',
+    desc: ' built with MERN to Add and manage Books and users, with Authentication and Authorization.',
+    code: 'https://github.com/Murtaza-Shahani/Book-Management',
+    live: '#',
+    img: '/Book.png',
+  },
+
+  {
+    title: 'Event Management Website',
+    desc: ' built an Event management website using HTML, CSS and Bootstrap to show case a landing page of event management website',
+    code: 'https://github.com/Murtaza-Shahani/Web3_task1',
+    live: '#',
+    img: '/Event.png',
+  },
+
+  {
+    title: 'Tour Website Landing page',
+    desc: ' built an Tour Website using HTML, CSS and Bootstrap to show case a landing page of tour website and services it includes',
+    code: 'https://github.com/Murtaza-Shahani/Travel_Website',
+    live: '#',
+    img: '/Travel.png',
+  },
+  
+  
+
+  
+  
   {
     title: 'Personal Portfolio',
     desc: 'Personal portfolio built with React and Material UI to showcase work and contact.',
@@ -47,7 +83,7 @@ const mlProjects = [
     desc: 'Deep learning project to detect AI-generated voices using CNN/LSTM models.',
     code: '#',
     live: '#',
-    img: '/images/voice-detection.png',
+    img: '/Voice.png',
   },
   {
     title: 'Intrusion Detection System',
@@ -133,13 +169,13 @@ export default function ProjectsSection() {
               <h3 className="text-xl font-bold mb-2 text-purple-400">{project.title}</h3>
               <p className="text-sm text-gray-300 mb-4 min-h-[60px]">{project.desc}</p>
               <div className="flex gap-4">
-                <a
+                {/* <a
                   href={project.live}
                   target="_blank"
                   className="px-4 py-2 bg-purple-600 rounded-full text-sm font-semibold hover:bg-purple-700 transition"
                 >
                   Live Preview
-                </a>
+                </a> */}
                 <a
                   href={project.code}
                   target="_blank"

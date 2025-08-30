@@ -1,16 +1,6 @@
-'use client';
-
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import {
-  FaEnvelope,
-  FaPhone,
-  FaWhatsapp,
-  FaLinkedin,
-  FaGithub,
-  FaInstagram,
-  FaFacebook,
-} from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaWhatsapp, FaLinkedin, FaGithub, FaInstagram, FaFacebook } from 'react-icons/fa';
 import { toast } from 'react-hot-toast';
 
 export default function Contact() {
@@ -33,9 +23,7 @@ export default function Contact() {
 
   return (
     <section className="bg-gray-900 text-white py-10 px-4">
-      {/* narrower container */}
       <div className="mx-auto w-full max-w-5xl">
-        {/* Title */}
         <div className="flex justify-center items-center mb-6">
           <div className="border-t border-purple-600 flex-grow" />
           <h2 className="px-4 text-3xl font-bold text-purple-500">Get In Touch</h2>
@@ -45,9 +33,8 @@ export default function Contact() {
           Tell me about your project — I typically reply within 24 hours.
         </p>
 
-        {/* Two compact cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Left: contact info (smaller paddings & fonts) */}
+          {/* Left: contact info */}
           <motion.div
             initial={{ opacity: 0, y: 22 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -123,7 +110,7 @@ export default function Contact() {
             </div>
           </motion.div>
 
-          {/* Right: compact form */}
+          {/* Right: contact form */}
           <motion.div
             initial={{ opacity: 0, y: 22 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -179,7 +166,6 @@ export default function Contact() {
   );
 }
 
-/* ——— smaller field components ——— */
 function Field({ label, name, type = 'text', value, onChange }) {
   return (
     <label className="block text-sm">

@@ -1,5 +1,6 @@
 // src/App.js
 import './App.css';
+import { Toaster } from 'react-hot-toast';
 import AboutMe from './components/AboutMe';
 import ContactSection from './components/ContactSection';
 import EducationExperience from './components/EducationExperience';
@@ -12,6 +13,7 @@ import ServicesSection from './components/ServiceSection';
 function App() {
   return (
     <div>
+        <Toaster position="top-center" />
       <Navbar />
 
       {/* scroll-mt-24 (96px) keeps content from hiding under a fixed navbar */}
